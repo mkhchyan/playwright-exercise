@@ -39,11 +39,6 @@ test.describe('Products API', () => {
     const res = await request.get(`${API_BASE}/productsList`);
 
     expect(res.status(), 'expected HTTP 200 from /productsList').toBe(200);
-    // NOTE: automationexercise.com mislabels JSON responses as
-    // "text/html; charset=utf-8". The real contract — that the body
-    // parses as JSON — is enforced by parseJson() below, which throws
-    // a descriptive error (with status, content-type, and a body
-    // preview) if the response isn't valid JSON.
 
     const body = await parseJson<ApiResponse>(res);
 

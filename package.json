@@ -7,13 +7,17 @@
   "type": "module",
   "scripts": {
     "test": "playwright test",
+    "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:chromium": "playwright test --project=chromium",
     "test:report": "playwright show-report"
   },
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "1.59.1",
-    "@types/node": "25.6.0"
+    "@types/node": "25.6.0",
+    "typescript": "6.0.3"
   }
 }

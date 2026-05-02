@@ -4,8 +4,8 @@ export default defineConfig({
   testDir: 'tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  retries: process.env.CI ? 2 : 1,
+  workers: 4,
   reporter: 'html',
   timeout: 60_000,
   expect: {
@@ -19,7 +19,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], isMobile: false },
     },
     {
       name: 'firefox',
